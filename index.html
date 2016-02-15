@@ -23,6 +23,14 @@
     }
     ?>
     
+    <script type="text/javascript">
+    var clicks = 0;
+    function onClick() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+    </script>
+    
     <!-- Modals; Edit with care -->
     <div id="img1" style="display:none;">
 
@@ -91,10 +99,8 @@
             <td><a href="http://www.yelp.com/biz/taco-circus-saint-louis?osq=tacos">4/5</a></td>
             <td>$2-4</td>
             <td></td>
-            <td> <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method = post>
-                <input type = "submit" name = "button" value = "Submit" >
-                <input type = "hidden" name = "counter" value = "<?php print $counter; ?>"; />
-                </form>
+            <td> <button type="button" onClick="onClick()">Click me</button>
+                <p>Clicks: <a id="clicks">0</a></p>
             </td>
           </tr>
           <tr>
