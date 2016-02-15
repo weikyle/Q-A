@@ -14,15 +14,7 @@
     <script type="text/javascript" src="js/sorttable.js"></script>
   </head>
   <body>
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $counter = isset($_POST['counter']) ? $_POST['counter'] : 0;
-    if(isset($_POST["button"])){
-        $counter++;
-        echo $counter;
-    }
-    }
-    ?>
+    
     
     <script type="text/javascript">
     var clicks = 0;
@@ -83,14 +75,6 @@
             <th>Area/Map</th>
             <th>Yelp Review</th>
             <th>Price/Taco</th>
-            <th>Votes</th>
-            <th> </th>
-          </tr>
-          <tr>
-            <td><a href="">Moolah Theatre & Lounge</a></td>
-            <td><a href="">Downtown</a></td>
-            <td><a href="">4.5/5</a></td>
-            <td>$0</td>
           </tr>
           <tr>
             <td><a href="http://missiontacojoint.com/">Mission Taco</a></td>
