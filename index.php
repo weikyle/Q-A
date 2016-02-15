@@ -13,7 +13,15 @@
     <script type="text/javascript" src="/path/to/jquery.tablesorter.js"></script> 
   </head>
   <body>
-    
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $counter = isset($_POST['counter']) ? $_POST['counter'] : 0;
+    if(isset($_POST["button"])){
+        $counter++;
+        echo $counter;
+    }
+    }
+    ?>
     
     <!-- Modals; Edit with care -->
     <div id="img1" style="display:none;">
@@ -82,6 +90,12 @@
             <td><a href="https://www.google.com/maps/dir//Taco+Circus,+4258+Schiller+Pl,+St.+Louis,+MO+63116,+United+States/@38.5780387,-90.2705582,17z/data=!4m12!1m3!3m2!1s0x87d8b5d1c7bc92fb:0x5788b6b3264c4f46!2sTaco+Circus!4m7!1m0!1m5!1m1!1s0x87d8b5d1c7bc92fb:0x5788b6b3264c4f46!2m2!1d-90.2683695!2d38.5780345">Richmond Heights</a></td>
             <td><a href="http://www.yelp.com/biz/taco-circus-saint-louis?osq=tacos">4/5</a></td>
             <td>$2-4</td>
+            <td></td>
+            <td> <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method = post>
+                <input type = "submit" name = "button" value = "Submit" >
+                <input type = "hidden" name = "counter" value = "<?php print $counter; ?>"; />
+                </form>
+            </td>
           </tr>
           <tr>
             <td><a href="http://tortillaria.net/">Tortillaria</a></td>
@@ -132,21 +146,21 @@
             <td>$0</td>
           </tr>
           <tr>
-            <td><a href="">Moolah Theatre & Lounge</a></td>
-            <td><a href="">Downtown</a></td>
-            <td><a href="">4.5/5</a></td>
+            <td><a href="">El Burro Loco</a></td>
+            <td><a href="https://www.google.com/maps/dir//El+Burro+Loco,+313+N+Euclid+Ave,+St.+Louis,+MO+63108,+United+States/@38.6451798,-90.2640074,17z/data=!4m12!1m3!3m2!1s0x87d8b4d62df008bd:0x9ba7efee52f46d9d!2sEl+Burro+Loco!4m7!1m0!1m5!1m1!1s0x87d8b4d62df008bd:0x9ba7efee52f46d9d!2m2!1d-90.2618187!2d38.6451756">Central West End</a></td>
+            <td><a href="http://www.yelp.com/biz/el-burro-loco-saint-louis?osq=tacos">4/5</a></td>
             <td>$0</td>
           </tr>
           <tr>
-            <td><a href="">Moolah Theatre & Lounge</a></td>
-            <td><a href="">Downtown</a></td>
-            <td><a href="">4.5/5</a></td>
+            <td><a href="">Tarahumara</a></td>
+            <td><a href="https://www.google.com/maps/dir//Tarahumara,+2818+Cherokee+St,+St.+Louis,+MO+63118,+United+States/@38.5937592,-90.2330197,17z/data=!4m12!1m3!3m2!1s0x87d8b473c78a5035:0xa97cbab7b55e8c9f!2sTarahumara!4m7!1m0!1m5!1m1!1s0x87d8b473c78a5035:0xa97cbab7b55e8c9f!2m2!1d-90.230831!2d38.593755">Cherokee Street</a></td>
+            <td><a href="http://www.yelp.com/biz/tarahumara-saint-louis?osq=tacos">5/5</a></td>
             <td>$0</td>
           </tr>
           <tr>
-            <td><a href="">Moolah Theatre & Lounge</a></td>
-            <td><a href="">Downtown</a></td>
-            <td><a href="">4.5/5</a></td>
+            <td><a href="http://rosalitascantina.com/">Rosalita's Cantina</a></td>
+            <td><a href="https://www.google.com/maps/dir//Rosalita's+Cantina,+1235+Washington+Ave,+St.+Louis,+MO+63103,+United+States/@38.6321792,-90.2003476,17z/data=!4m12!1m3!3m2!1s0x87d8b33d633a0bc3:0x4fe2f25f912e3d86!2sRosalita's+Cantina!4m7!1m0!1m5!1m1!1s0x87d8b33d633a0bc3:0x4fe2f25f912e3d86!2m2!1d-90.1981589!2d38.632175">Downtown</a></td>
+            <td><a href="http://www.yelp.com/biz/rosalitas-cantina-saint-louis">3.5/5</a></td>
             <td>$0</td>
           </tr>
           <tr>
